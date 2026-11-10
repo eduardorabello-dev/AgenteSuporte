@@ -1,4 +1,4 @@
-# Central de Suporte de TI — chat de atendimento sem IA, 100% local
+# Central de Suporte de TI: chat de atendimento e painel do técnico
 
 Um balcão de suporte de TI completo que roda no próprio computador: o **colaborador** descreve o problema num chat,
 o assistente classifica, sugere a solução passo a passo e, se não resolver, abre um chamado; o **técnico** atende

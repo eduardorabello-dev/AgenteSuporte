@@ -1,0 +1,33 @@
+{
+  "_como_usar": "Cada grupo lista palavras que a busca deve tratar como iguais. A primeira é a forma principal. Flexões (plural, verbos) já são tratadas automaticamente pelo radicalizador, não precisa listar. Depois de editar, reinicie o serviço.",
+  "grupos": [
+    ["computador", "pc", "notebook", "laptop", "desktop", "máquina", "micro"],
+    ["entrar", "logar", "login", "logon", "acessar", "acesso", "autenticar"],
+    ["senha", "password", "credencial"],
+    ["bloquear", "bloqueio", "bloqueada", "bloqueado", "travada"],
+    ["expirar", "expirou", "expirada", "vencida", "venceu", "vencer"],
+    ["redefinir", "resetar", "reset", "esqueci"],
+    ["email", "e-mail", "outlook", "correio", "mail"],
+    ["internet", "net", "wifi", "wi-fi", "wireless"],
+    ["cabo", "rj45", "tomada de rede"],
+    ["vpn", "forticlient", "túnel", "remoto", "home office", "de casa"],
+    ["lento", "lentidão", "devagar", "demora", "demorando", "travando", "travou", "trava", "congelando", "congelou"],
+    ["impressora", "imprimir", "impressão", "imprime", "imprimindo", "impressoras"],
+    ["toner", "cartucho", "tinta"],
+    ["enroscado", "atolado", "atolamento", "preso", "enroscou"],
+    ["headset", "fone", "fones", "headphone", "microfone"],
+    ["ramal", "telefone", "softphone", "voip", "ligação", "ligações", "telefonia"],
+    ["instalar", "instalação", "baixar", "download"],
+    ["programa", "software", "aplicativo", "app"],
+    ["quebrado", "quebrou", "danificado", "defeito", "estragou", "estragado"],
+    ["golpe", "phishing", "fraude", "suspeito", "suspeita", "malicioso", "falso"],
+    ["vírus", "malware", "ameaça", "antivírus", "ransomware", "infectado"],
+    ["monitor", "tela", "display"],
+    ["teclado", "tecla", "teclas"],
+    ["mouse", "rato"],
+    ["teams", "reunião"],
+    ["mfa", "2fa", "autenticador", "authenticator", "token", "dois fatores"],
+    ["cheia", "lotada", "cota", "espaço"],
+    ["sincronizar", "sincroniza", "sincronização", "atualiza"]
+  ]
+}

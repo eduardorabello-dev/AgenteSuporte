@@ -1,0 +1,141 @@
+
+.abas-painel {
+  max-width: 992px; margin: 16px auto -4px; padding: 0; display: flex; gap: 4px;
+  border-bottom: 1px solid var(--linha);
+}
+.abas-painel button {
+  border: none; background: none; padding: 10px 14px; margin-bottom: -1px; font-size: 15px; color: var(--grafite);
+  border-bottom: 2px solid transparent;
+}
+.abas-painel button:hover { color: var(--tinta); }
+.abas-painel button[aria-selected="true"] { color: var(--tinta); font-weight: 600; border-bottom-color: var(--petroleo); }
+
+.cabeca-admin { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.cabeca-admin h2 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -.01em; }
+.cabeca-admin p { margin: 2px 0 0; color: var(--grafite); font-size: 14.5px; }
+
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.tile {
+  display: grid; gap: 4px; align-content: start; padding: 14px 16px; background: var(--folha);
+  border: 1px solid var(--linha); border-radius: 12px; box-shadow: var(--sombra);
+}
+.tile-rotulo { font-size: 13px; color: var(--grafite); font-weight: 500; }
+.tile-valor { font-size: 30px; line-height: 1.1; font-weight: 600; color: var(--tinta); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.tile-detalhe { font-size: 12.5px; color: var(--grafite); }
+.selo-status {
+  justify-self: start; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; padding: 2px 9px 2px 3px;
+  border-radius: 999px; font-size: 12.5px; font-weight: 500;
+}
+.selo-status span {
+  width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700;
+  color: #fff;
+}
+.selo-status.bom { background: color-mix(in srgb, var(--ok) 13%, transparent); color: var(--tinta); }
+.selo-status.bom span { background: var(--ok); }
+.selo-status.critico { background: var(--critico-fundo); color: var(--tinta); }
+.selo-status.critico span { background: var(--critico); }
+
+
+.grade-graficos { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 12px; }
+.cartao-grafico {
+  min-width: 0; display: grid; align-content: start; gap: 4px; padding: 16px 18px; background: var(--folha);
+  border: 1px solid var(--linha); border-radius: 12px; box-shadow: var(--sombra);
+}
+.cartao-grafico h3 { margin: 0; font-size: 15.5px; font-weight: 600; }
+.sub-grafico { margin: 0 0 8px; font-size: 13px; color: var(--grafite); }
+.grafico { position: relative; }
+.svg-grafico { display: block; width: 100%; height: auto; overflow: visible; }
+.svg-grafico .barra { fill: var(--grafico); }
+.svg-grafico .grade { stroke: var(--linha); stroke-width: 1; }
+.svg-grafico .eixo { stroke: var(--linha-forte); stroke-width: 1; }
+.svg-grafico .rotulo-eixo { fill: var(--grafite); font-size: 11px; font-variant-numeric: tabular-nums; }
+.svg-grafico .area-alvo { fill: transparent; }
+.svg-grafico .barra-alvo { outline: none; cursor: default; }
+.svg-grafico .barra-alvo:hover .area-alvo, .svg-grafico .barra-alvo:focus .area-alvo { fill: color-mix(in srgb, var(--grafico) 9%, transparent); }
+
+.barras-h { display: grid; gap: 10px; }
+.linha-barra {
+  display: grid; grid-template-columns: minmax(90px, 170px) minmax(0, 1fr) 44px; align-items: center; gap: 4px 10px;
+  border-radius: 6px; outline-offset: 3px;
+}
+.rotulo-barra { font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trilho-barra { height: 12px; display: block; }
+.preenchimento { display: block; height: 100%; background: var(--grafico); border-radius: 0 4px 4px 0; }
+.linha-barra:hover .preenchimento, .linha-barra:focus .preenchimento { filter: brightness(1.12); }
+.valor-barra { font-size: 13.5px; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.nota-barra { grid-column: 2 / 4; margin-top: -4px; font-size: 12.5px; color: var(--grafite); }
+
+.dica-grafico {
+  position: absolute; z-index: 2; transform: translate(-50%, -100%); pointer-events: none; white-space: nowrap;
+  padding: 5px 10px; border-radius: 8px; font-size: 13px; background: var(--marca); color: #fff;
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .5);
+}
+.ver-tabela { margin-top: 8px; font-size: 13.5px; }
+.ver-tabela summary { cursor: pointer; color: var(--petroleo); width: fit-content; }
+.ver-tabela table, .tabela-admin { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 13.5px; }
+.ver-tabela th, .ver-tabela td, .tabela-admin th, .tabela-admin td {
+  padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--linha); font-variant-numeric: tabular-nums;
+}
+.tabela-admin th, .ver-tabela th { font-size: 12.5px; font-weight: 600; color: var(--grafite); }
+.tabela-admin .num { text-align: right; }
+.tabela-admin td.atrasado { color: var(--critico); font-weight: 600; }
+
+.lista-admin { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.lista-admin li { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+.lista-admin q { quotes: "“" "”"; overflow-wrap: anywhere; }
+.vezes { flex: none; color: var(--grafite); font-size: 13px; font-variant-numeric: tabular-nums; }
+.vazio-admin { margin: 6px 0; color: var(--grafite); font-size: 14px; }
+
+
+.grade-contas { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 12px; align-items: start; }
+.form-conta { display: grid; gap: 12px; }
+.form-conta h3 { margin: 0; font-size: 15.5px; }
+.campos-conta { display: grid; gap: 10px; }
+.marcar-admin { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+.marcar-admin input { width: 16px; height: 16px; accent-color: var(--petroleo); }
+.form-conta .botao-pri { justify-self: start; padding: 8px 16px; }
+.senha-gerada {
+  display: grid; gap: 6px; margin-top: 14px; padding: 12px; border-radius: 10px; font-size: 13.5px;
+  background: color-mix(in srgb, var(--ok) 11%, transparent); border: 1px solid color-mix(in srgb, var(--ok) 35%, transparent);
+}
+.linha-senha { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.linha-senha code {
+  font: 600 16px/1.2 ui-monospace, "Cascadia Mono", Consolas, monospace; padding: 6px 10px; border-radius: 6px;
+  background: var(--folha); border: 1px solid var(--linha); letter-spacing: .03em;
+}
+.lista-contas { list-style: none; margin: 0; padding: 0; display: grid; }
+.conta-admin {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 4px;
+  border-bottom: 1px solid var(--linha);
+}
+.conta-admin:last-child { border-bottom: none; }
+.conta-admin.desativada { opacity: .62; }
+.quem-conta { display: grid; gap: 2px; min-width: 0; }
+.quem-conta strong { font-size: 15px; }
+.quem-conta strong small { font-weight: 400; color: var(--grafite); }
+.quem-conta > span { font-size: 13.5px; color: var(--grafite); overflow-wrap: anywhere; }
+.etiquetas-conta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.pilula.ativa { background: color-mix(in srgb, var(--ok) 14%, transparent); color: var(--ok); }
+.pilula.inativa { background: var(--critico-fundo); color: var(--critico); }
+.pilula.provisoria { background: var(--alerta-fundo); color: var(--alerta); }
+.acesso-conta { font-size: 12.5px !important; }
+.acoes-conta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.acoes-conta button { font-size: 13px; padding: 6px 10px; }
+.acoes-conta button:disabled { opacity: .4; cursor: default; }
+.botao-sec.perigo:hover:not(:disabled) { color: var(--critico); border-color: var(--critico); }
+
+@media (max-width: 860px) {
+  .grade-graficos, .grade-contas { grid-template-columns: minmax(0, 1fr); }
+  .conta-admin { grid-template-columns: auto minmax(0, 1fr); }
+  .acoes-conta { grid-column: 1 / -1; justify-content: flex-start; }
+}
+@media (max-width: 1040px) { .abas-painel { margin-left: 24px; margin-right: 24px; } }
+@media (max-width: 760px) {
+  .abas-painel { margin: 10px 16px -4px; }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .tile { padding: 12px; }
+  .tile-valor { font-size: 24px; }
+  .linha-barra { grid-template-columns: minmax(70px, 110px) minmax(0, 1fr) 36px; }
+}
+.painel-admin .segmentos button { white-space: nowrap; }

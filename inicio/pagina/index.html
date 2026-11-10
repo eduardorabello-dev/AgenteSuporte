@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central de Suporte de TI</title>
+<meta name="description" content="Escolha como entrar: colaborador (chat de suporte) ou técnico (painel de chamados).">
+<link rel="icon" href="/arquivos/visual/icone.svg" type="image/svg+xml">
+<script src="/arquivos/visual/preferencias.js"></script>
+<link rel="stylesheet" href="/arquivos/visual/base.css">
+<link rel="stylesheet" href="/arquivos/visual/componentes.css">
+<link rel="stylesheet" href="/arquivos/inicio/inicio.css">
+</head>
+<body class="pagina-inicio">
+<header class="topo">
+  <a class="marca" href="/" data-i18n-aria-label="inicio.titulo" aria-label="Central de Suporte de TI">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3.5 17.3a1.4 1.4 0 0 0 2 2l5.8-5.8a4 4 0 0 0 5.2-5.4l-2.5 2.5-2.1-.6-.6-2.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  </a>
+  <div class="titulo">
+    <h1 data-i18n="inicio.titulo">Central de Suporte de TI</h1>
+    <p data-i18n="inicio.sub">Atendimento local, sem internet e sem chave de API.</p>
+  </div>
+  <button class="botao-topo so-icone config-inicio" id="config" type="button" data-i18n-aria-label="comum.configuracoes" data-i18n-title="comum.configuracoes" aria-label="Configurações">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+  </button>
+</header>
+
+<main class="inicio">
+  <section class="abertura">
+    <span class="selo-inicio" data-i18n="inicio.selo">Balcão de atendimento</span>
+    <h2 data-i18n="inicio.pergunta">Como você quer entrar?</h2>
+    <p data-i18n="inicio.explica">Escolha o seu perfil. Você pode voltar a esta tela pelo ícone no topo de qualquer página.</p>
+  </section>
+
+  <nav class="escolhas" aria-label="Escolha de perfil">
+    <a class="escolha colaborador" href="/chat">
+      <span class="icone" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="40" height="40"><path d="M10 12h28a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H22l-8 6v-6h-4a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="17" cy="23" r="2" fill="currentColor"/><circle cx="24" cy="23" r="2" fill="currentColor"/><circle cx="31" cy="23" r="2" fill="currentColor"/></svg>
+      </span>
+      <span class="papel" data-i18n="inicio.colab">Sou colaborador</span>
+      <span class="resumo" data-i18n="inicio.colab_resumo">Estou com um problema e preciso de ajuda.</span>
+      <ul class="itens">
+        <li data-i18n="inicio.colab_1">Solução passo a passo para os problemas mais comuns</li>
+        <li data-i18n="inicio.colab_2">Acompanhe seus chamados em “Meus chamados”</li>
+        <li data-i18n="inicio.colab_3">Um técnico assume quando precisar</li>
+      </ul>
+      <span class="acao"><span data-i18n="inicio.colab_acao">Abrir o chat</span> <span aria-hidden="true">→</span></span>
+    </a>
+
+    <a class="escolha tecnico" href="/tecnico">
+      <span class="icone" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="40" height="40"><path d="M12 26v-4a12 12 0 0 1 24 0v4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><rect x="8" y="25" width="7" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="33" y="25" width="7" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M36 36c0 4-4 6-10 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      <span class="papel" data-i18n="inicio.tec">Sou técnico de suporte</span>
+      <span class="resumo" data-i18n="inicio.tec_resumo">Quero atender os chamados da equipe.</span>
+      <ul class="itens">
+        <li data-i18n="inicio.tec_1">Fila de chamados separada por técnico</li>
+        <li data-i18n="inicio.tec_2">Conversa direta com quem abriu o chamado</li>
+        <li data-i18n="inicio.tec_3">Previsão de atendimento e chamados atrasados</li>
+      </ul>
+      <span class="acao"><span data-i18n="inicio.tec_acao">Entrar no painel</span> <span aria-hidden="true">→</span></span>
+      <span class="cadeado"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span data-i18n="inicio.login">Acesso com e-mail e senha</span></span>
+    </a>
+  </nav>
+
+  <p class="rodape-inicio" data-i18n="inicio.rodape">Tudo roda neste computador. Os registros ficam na pasta registros do projeto.</p>
+</main>
+<script src="/arquivos/visual/idiomas.js"></script>
+<script src="/arquivos/visual/conta.js"></script>
+<script src="/arquivos/inicio/inicio.js"></script>
+</body>
+</html>

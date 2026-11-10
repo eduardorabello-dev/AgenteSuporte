@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suporte de TI</title>
+<link rel="icon" href="/arquivos/visual/icone.svg" type="image/svg+xml">
+<script src="/arquivos/visual/preferencias.js"></script>
+<link rel="stylesheet" href="/arquivos/visual/base.css">
+<link rel="stylesheet" href="/arquivos/visual/componentes.css">
+<link rel="stylesheet" href="/arquivos/chat/chat.css">
+</head>
+<body>
+<div class="app">
+  <header class="topo">
+    <a class="marca" href="/" data-i18n-title="comum.inicio" data-i18n-aria-label="comum.inicio" title="Voltar ao início" aria-label="Voltar ao início">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3.5 17.3a1.4 1.4 0 0 0 2 2l5.8-5.8a4 4 0 0 0 5.2-5.4l-2.5 2.5-2.1-.6-.6-2.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="titulo">
+      <h1 data-i18n="chat.titulo">Suporte de TI</h1>
+      <p data-i18n="chat.sub">Descreva o problema. Eu indico a solução e, se precisar, verifico sua conta.</p>
+    </div>
+    <span class="estado" id="estado" data-estado="carregando" hidden data-i18n="comum.conectando">Conectando</span>
+    <button class="botao-topo texto" id="meus-chamados" type="button" hidden>
+      <span data-i18n="chat.meus">Meus chamados</span><span class="contador" id="contador-meus" hidden></span>
+    </button>
+    <button class="botao-sec botao-nova" id="nova" type="button" hidden data-i18n-title="chat.nova" title="Nova conversa">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span data-i18n="chat.nova">Nova conversa</span>
+    </button>
+    <button class="botao-topo so-icone" id="config-anonimo" type="button" data-i18n-aria-label="comum.configuracoes" data-i18n-title="comum.configuracoes" aria-label="Configurações">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+    <button class="botao-topo" id="usuario" type="button" hidden data-i18n-title="comum.conta_config" title="Conta e configurações">
+      <span class="avatar-usuario" id="avatar" aria-hidden="true"></span>
+      <span class="nome-usuario"><strong id="nome-usuario"></strong></span>
+    </button>
+  </header>
+
+  <main class="acesso" id="acesso" hidden></main>
+
+  <main class="conversa" id="conversa" hidden>
+      <div class="mensagens" id="mensagens" role="log" aria-live="polite"></div>
+      <div class="rodape-conversa">
+        <div class="faixa-tecnico" id="faixa-tecnico" role="status" hidden>
+          <span class="avatar-tecnico" id="avatar-tecnico" aria-hidden="true"></span>
+          <span><span id="texto-tecnico"></span>
+            <small data-i18n="chat.direto_para_ele">Suas mensagens vão direto para ele.</small></span>
+        </div>
+        <div class="todos-problemas" id="todos-problemas" hidden>
+          <div class="todos-topo">
+            <strong data-i18n="chat.problemas_comuns">Problemas comuns</strong>
+            <button class="fechar" id="fechar-todos" type="button" data-i18n-aria-label="chat.fechar_lista" aria-label="Fechar lista">×</button>
+          </div>
+          <div class="grupos" id="grupos"></div>
+        </div>
+        <div class="faixa-rapidas">
+          <p class="rotulo-rapidas" id="rotulo-rapidas" data-i18n="chat.problemas_comuns">Problemas comuns</p>
+          <div class="trilho" id="trilho">
+            <button class="seta-faixa esquerda" id="seta-esquerda" type="button" data-i18n-aria-label="chat.anteriores" aria-label="Ver os problemas anteriores" hidden>
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="rapidas" id="rapidas" role="group" aria-labelledby="rotulo-rapidas"></div>
+            <button class="seta-faixa direita" id="seta-direita" type="button" data-i18n-aria-label="chat.ver_mais" aria-label="Ver mais problemas" hidden>
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <form class="composer" id="form">
+          <label class="so-leitor" for="texto" data-i18n="chat.sua_mensagem">Sua mensagem</label>
+          <textarea id="texto" rows="1" placeholder="Ex.: minha senha expirou e não consigo entrar"></textarea>
+          <button class="enviar" id="enviar" type="submit" data-i18n-aria-label="comum.enviar" aria-label="Enviar">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <p class="dica" data-i18n="comum.enter">Enter envia. Shift+Enter quebra a linha.</p>
+      </div>
+  </main>
+</div>
+
+<div class="veu" id="veu-meus" hidden></div>
+<aside class="gaveta meus" id="painel-meus" role="dialog" aria-modal="true" aria-labelledby="titulo-meus" hidden>
+  <header class="gaveta-topo">
+    <div class="gaveta-quem">
+      <h2 id="titulo-meus" data-i18n="meus.titulo">Meus chamados</h2>
+      <p data-i18n="meus.sub">Os chamados que foram para a equipe técnica.</p>
+    </div>
+    <button class="botao-sec" id="atualizar-meus" type="button" data-i18n="meus.atualizar">Atualizar</button>
+    <button class="fechar" id="fechar-meus" type="button" data-i18n-aria-label="comum.fechar" aria-label="Fechar">×</button>
+  </header>
+  <div class="lista-meus" id="lista-meus" aria-live="polite"></div>
+</aside>
+<script src="/arquivos/visual/idiomas.js"></script>
+<script src="/arquivos/visual/acesso.js"></script>
+<script src="/arquivos/visual/conta.js"></script>
+<script src="/arquivos/chat/chat.js"></script>
+</body>
+</html>

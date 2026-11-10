@@ -1,0 +1,46 @@
+[
+  {
+    "email": "xxxxx1@empresa.com",
+    "login": "xxxxx1",
+    "nome": "XXXXX",
+    "senhaAlteradaHaDias": 87,
+    "politicaExpiracaoDias": 90,
+    "nuncaExpira": false,
+    "habilitada": true,
+    "bloqueada": false,
+    "tentativasInvalidas": 0
+  },
+  {
+    "email": "xxxxx2@empresa.com",
+    "login": "xxxxx2",
+    "nome": "XXXXX",
+    "senhaAlteradaHaDias": 93,
+    "politicaExpiracaoDias": 90,
+    "nuncaExpira": false,
+    "habilitada": true,
+    "bloqueada": false,
+    "tentativasInvalidas": 2
+  },
+  {
+    "email": "xxxxx3@empresa.com",
+    "login": "xxxxx3",
+    "nome": "XXXXX",
+    "senhaAlteradaHaDias": 20,
+    "politicaExpiracaoDias": 90,
+    "nuncaExpira": false,
+    "habilitada": true,
+    "bloqueada": true,
+    "tentativasInvalidas": 5
+  },
+  {
+    "email": "xxxxx5@empresa.com",
+    "login": "xxxxx5",
+    "nome": "XXXXX",
+    "senhaAlteradaHaDias": 300,
+    "politicaExpiracaoDias": 90,
+    "nuncaExpira": true,
+    "habilitada": false,
+    "bloqueada": true,
+    "tentativasInvalidas": 0
+  }
+]

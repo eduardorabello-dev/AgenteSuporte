@@ -1,0 +1,7 @@
+{
+  "include": ["../servico", "../chat", "../painel-tecnico"],
+  "exclude": ["**/.venv"],
+  "extraPaths": ["../servico"],
+  "venvPath": "..",
+  "venv": ".venv"
+}

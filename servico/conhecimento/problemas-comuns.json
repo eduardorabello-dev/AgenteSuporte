@@ -1,0 +1,57 @@
+{
+  "_como_usar": "Atalhos do chat, agrupados por tema. 'destaque': true aparece direto na faixa acima da caixa de texto; os demais ficam em 'Mais problemas'. 'artigo' é o artigo da base que a frase deve encontrar (conferido pelos testes). Depois de editar, recarregue a página do chat.",
+  "grupos": [
+    {
+      "tema": "Acesso e senha",
+      "problemas": [
+        { "texto": "Minha senha expirou e não consigo entrar", "artigo": "KB-001", "destaque": true },
+        { "texto": "Minha conta está bloqueada", "artigo": "KB-002", "destaque": true },
+        { "texto": "Troquei de celular e não recebo o código do MFA", "artigo": "KB-006" }
+      ]
+    },
+    {
+      "tema": "E-mail",
+      "problemas": [
+        { "texto": "O Outlook não envia nem recebe e-mails", "artigo": "KB-004", "destaque": true },
+        { "texto": "Minha caixa de e-mail está cheia", "artigo": "KB-013" },
+        { "texto": "Recebi um e-mail suspeito pedindo minha senha", "artigo": "KB-008" }
+      ]
+    },
+    {
+      "tema": "Internet e rede",
+      "problemas": [
+        { "texto": "A VPN não conecta de casa", "artigo": "KB-003", "destaque": true },
+        { "texto": "O Wi-Fi fica caindo toda hora", "artigo": "KB-014" }
+      ]
+    },
+    {
+      "tema": "Impressora",
+      "problemas": [
+        { "texto": "A impressora não imprime", "artigo": "KB-005", "destaque": true },
+        { "texto": "Acabou o toner da impressora", "artigo": "KB-005" }
+      ]
+    },
+    {
+      "tema": "Computador e equipamentos",
+      "problemas": [
+        { "texto": "O computador está muito lento", "artigo": "KB-007", "destaque": true },
+        { "texto": "O monitor não liga", "artigo": "KB-015" },
+        { "texto": "O teclado parou de funcionar", "artigo": "KB-015" }
+      ]
+    },
+    {
+      "tema": "Telefone e headset",
+      "problemas": [
+        { "texto": "O headset está sem áudio", "artigo": "KB-009" },
+        { "texto": "O ramal do softphone não recebe ligações", "artigo": "KB-010" }
+      ]
+    },
+    {
+      "tema": "Programas",
+      "problemas": [
+        { "texto": "O Teams não abre e dá erro", "artigo": "KB-011" },
+        { "texto": "Preciso instalar um programa", "artigo": "KB-012" }
+      ]
+    }
+  ]
+}

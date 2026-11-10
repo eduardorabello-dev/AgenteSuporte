@@ -1,7 +1,0 @@
-fastapi==0.115.12
-uvicorn[standard]==0.34.2
-openpyxl==3.1.5
-ldap3==2.9.1
-httpx==0.28.1
-pytest==8.3.5
-snowballstemmer==3.1.1
